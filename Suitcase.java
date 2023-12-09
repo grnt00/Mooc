@@ -29,6 +29,20 @@ public class Suitcase {
         return this.totalWeight;
     }
     
+    public Item heaviestItem(){
+        if(suitcaseList.isEmpty()){
+            return null;
+        }
+        
+        Item heaviestItem = suitcaseList.get(0);
+        
+        for(Item item:suitcaseList){
+            if(item.getWeight() > heaviestItem.getWeight())
+                heaviestItem = item;
+        }
+        return heaviestItem;
+    }
+    
     @Override
     public String toString(){
         if(suitcaseList.isEmpty()){
