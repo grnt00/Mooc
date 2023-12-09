@@ -2,25 +2,20 @@
 public class Main {
 
     public static void main(String[] args) {
-        // Test your class here
-   
-    Room room = new Room();
-    room.add(new Person("Lea", 183));
-    room.add(new Person("Kenya", 182));
-    room.add(new Person("Auli", 186));
-    room.add(new Person("Nina", 172));
-    room.add(new Person("Terhi", 185));
+        // You can use the main to test your classes!
+        
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
 
-    System.out.println("");
-    for (Person person : room.getPersons()) {
-        System.out.println(person);
-    }
+        Suitcase suitcase = new Suitcase(10);
+        suitcase.addItem(book);
+        suitcase.addItem(phone);
+        suitcase.addItem(brick);
 
-    System.out.println();
-    System.out.println("Shortest: " + room.take());
-    System.out.println("");
-    for (Person person : room.getPersons()) {
-        System.out.println(person);
+        System.out.println("The suitcase contains the following items:");
+        suitcase.printItems();
+        
+        System.out.println("Total weight: " + suitcase.totalWeight() + " kg");
     }
-  }
 }
