@@ -19,6 +19,13 @@ public class Hold {
         }   
     }
     
+    public void printItems(){
+        for(Suitcase suitcase:holdList){
+            suitcase.printItems();
+        }
+        
+    }
+    
     public String toString(){
         return this.holdList.size() + " suitcases " + "(" +
                 holdTotalWeight + "kg)";
