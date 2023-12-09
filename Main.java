@@ -2,26 +2,23 @@
 public class Main {
 
     public static void main(String[] args) {
+        // You can use the main to test your classes!
+        
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
 
-        // Try out your class here
-        SimpleCollection j = new SimpleCollection("characters");
-        System.out.println(j);        
-        
-        System.out.println();
-        
-        j.add("magneto");
-        System.out.println(j);
-        
-        System.out.println();
-        
-        j.add("mystique");
-        System.out.println(j);
-        
-        System.out.println();
-        
-        j.add("phoenix");
-        System.out.println(j);
-        
-        
+        Suitcase adasCase = new Suitcase(10);
+        adasCase.addItem(book);
+        adasCase.addItem(phone);
+
+        Suitcase pekkasCase = new Suitcase(10);
+        pekkasCase.addItem(brick);
+
+        Hold hold = new Hold(1000);
+        hold.addSuitcase(adasCase);
+        hold.addSuitcase(pekkasCase);
+
+        System.out.println(hold);
     }
 }
