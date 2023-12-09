@@ -19,12 +19,22 @@ public class TextUI {
         if(command.equals("end")){
             System.out.println("Bye bye!");
             break;
-        } else if(command.equals("add")){
+            
+        }else if(command.equals("add")){
             System.out.print("Word: ");
             String word = scanner.nextLine();
             System.out.print("Transaltion: ");
             String translation = scanner.nextLine();
             dictionary.add(word, translation);
+            
+        }else if(command.equals("search")){
+            System.out.print("To be translated: ");
+            String searchWord = scanner.nextLine();
+           // if(!dictionary.translate(searchWord).isEmpty()){
+           //     System.out.println("Translation: null");
+           // }
+            System.out.println("Translation: " + dictionary.translate(searchWord));
+            
             
         } else {
             System.out.println("Unknown command");
