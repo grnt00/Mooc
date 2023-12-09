@@ -1,25 +1,16 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        // You can use the main to test your classes!
+        // Try out how the different parts of the program work together
+        // here
         
-        Item book = new Item("Lord of the rings", 2);
-        Item phone = new Item("Nokia 3210", 1);
-        Item brick = new Item("brick", 4);
+        Scanner scanner = new Scanner(System.in);
+        SimpleDictionary dictionary = new SimpleDictionary();
 
-        Suitcase adasCase = new Suitcase(10);
-        adasCase.addItem(book);
-        adasCase.addItem(phone);
-
-        Suitcase pekkasCase = new Suitcase(10);
-        pekkasCase.addItem(brick);
-
-        Hold hold = new Hold(1000);
-        hold.addSuitcase(adasCase);
-        hold.addSuitcase(pekkasCase);
-
-        System.out.println("The suitcases in the hold contain the following items:");
-        hold.printItems();
+        TextUI ui = new TextUI(scanner, dictionary);
+        ui.start();
+        
     }
 }
