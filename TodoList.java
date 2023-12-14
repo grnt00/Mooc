@@ -32,7 +32,7 @@ public class TodoList {
     
     public void remove (int number){
         this.number = number;
-        taskList.remove(number);          
+        taskList.remove(number-1);          
     }
     
 }
