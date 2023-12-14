@@ -1,16 +1,28 @@
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        // Try out how the different parts of the program work together
-        // here
-        
-        Scanner scanner = new Scanner(System.in);
-        SimpleDictionary dictionary = new SimpleDictionary();
 
-        TextUI ui = new TextUI(scanner, dictionary);
+        // Here you can try out the combined functionality of your classes
+       /* TodoList list = new TodoList();
+        Scanner scanner = new Scanner(System.in);
+
+        UserInterface ui = new UserInterface(list, scanner);
         ui.start();
-        
+        */
+       
+    TodoList list = new TodoList();
+    list.add("read the course material");
+    list.add("watch the latest fool us");
+    list.add("take it easy");
+
+    list.print();
+    list.remove(2);
+
+    System.out.println();
+    list.print();
+       
     }
 }
