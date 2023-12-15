@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class UserInterface {
-    Scanner scanner = new Scanner(System.in);
-    TodoList toDoList;
+    private Scanner scanner = new Scanner(System.in);
+    private TodoList toDoList;
     
     public UserInterface(TodoList toDoList, Scanner scanner){
         this.toDoList = toDoList;
