@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public class TodoList {
     
-    private String task;
-    private int number;
     private ArrayList<String> taskList;
     
     public TodoList(){
@@ -11,7 +9,6 @@ public class TodoList {
     }
     
     public void add(String task){
-        this.task = task;
         if(!taskList.contains(task)){
             taskList.add(task); 
         }else{
@@ -26,7 +23,6 @@ public class TodoList {
     }
     
     public void remove (int number){
-        this.number = number;
         taskList.remove(number-1);          
     }
     
