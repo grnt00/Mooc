@@ -1,35 +1,58 @@
+
 import java.util.Scanner;
 
 public class UserInterface {
-    private Scanner scanner = new Scanner(System.in);
-    private TodoList toDoList;
-    
-    public UserInterface(TodoList toDoList, Scanner scanner){
-        this.toDoList = toDoList;
+
+    private GradeRegister register;
+    private Scanner scanner;
+
+    public UserInterface(GradeRegister register, Scanner scanner) {
+        this.register = register;
         this.scanner = scanner;
     }
-    
-    public void start(){
-        
-        while(true){
-            System.out.print("Command: ");
-            String command = scanner.nextLine();
-            if(command.equals("stop")){
+
+    public void start() {
+        readPoints();
+        System.out.println("");
+        printGradeDistribution();
+    }
+
+    public void readPoints() {
+        while (true) {
+            System.out.print("Points: ");
+            String input = scanner.nextLine();
+            if (input.equals("")) {
                 break;
-            } else if(command.equals("add")){
-                System.out.print("To add: ");
-                String toAdd = scanner.nextLine();
-                this.toDoList.add(toAdd);
-            } else if (command.equals("list")){
-                this.toDoList.print();
-            } else if(command.equals("remove")){
-                System.out.print("Which one is removed? ");
-                int toRemove = Integer.valueOf(scanner.nextLine());
-                this.toDoList.remove(toRemove);
             }
+
+            int points = Integer.valueOf(input);
+
+            if (points < 0 || points > 100) {
+                System.out.println("Impossible number.");
+                continue;
+            }
+
+            this.register.addGradeBasedOnPoints(points);
+        }
+    }
+
+    public void printGradeDistribution() {
+        int grade = 5;
+        while (grade >= 0) {
+            int stars = register.numberOfGrades(grade);
+            System.out.print(grade + ": ");
+            printsStars(stars);
+            System.out.println("");
+
+            grade = grade - 1;
         }
         
     }
-    
-    
+
+    public static void printsStars(int stars) {
+        while (stars > 0) {
+            System.out.print("*");
+            stars--;
+        }
+    }
 }
