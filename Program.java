@@ -9,14 +9,8 @@ public class Program {
         GradeRegister register = new GradeRegister();
 
         UserInterface ui = new UserInterface(register, scanner);
-        //ui.start();
-        
-        register.addGradeBasedOnPoints(93);
-        register.addGradeBasedOnPoints(91);
-        register.addGradeBasedOnPoints(92);
-
-        System.out.println(register.averageOfPoints());
-        
+        ui.start();
+                
         
     }
 }
