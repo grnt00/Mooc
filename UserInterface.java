@@ -28,7 +28,7 @@ public class UserInterface {
             jokemanager.addJoke(input);
         } else if(command.equals("2")){
             System.out.println("Drawing jokes: ");
-            jokemanager.drawJoke();
+            System.out.println(jokemanager.drawJoke());
         } else if(command.equals("3")){
             System.out.println("Printing jokes: ");
             jokemanager.printJokes();
