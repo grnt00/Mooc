@@ -29,4 +29,11 @@ public class ExerciseManagementTest {
         assertTrue(management.exerciseList().contains("Write a test"));
     }
     
+    @Test
+    public void exerciseCanBeMarkedAsCompleted(){
+        management.add("New exercise");
+        management.markAsCompleted("New exercise");
+        assertTrue(management.isCompleted("New exercise"));
+    }
+    
 }

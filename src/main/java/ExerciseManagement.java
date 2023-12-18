@@ -16,4 +16,12 @@ public class ExerciseManagement {
         this.exercises.add(exercise);
     }
     
+    public void markAsCompleted(String exercise){
+   
+    }
+    
+    public boolean isCompleted(String exercise){
+        return true;
+    }
+    
 }
