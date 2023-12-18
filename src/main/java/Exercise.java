@@ -4,7 +4,7 @@ public class Exercise {
     private String name;
     private Boolean completed;
     
-    public Exercise(){
+    public Exercise(String name){
         this.name = name;
         this.completed = completed;
     }
