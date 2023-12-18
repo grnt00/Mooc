@@ -3,9 +3,11 @@ import java.util.ArrayList;
 public class ExerciseManagement {
 
     private ArrayList<String> exercises;
+    private ArrayList<String> completedExercises;
     
     public ExerciseManagement(){
         this.exercises = new ArrayList<>();
+        this.completedExercises = new ArrayList<>();
     }
     
     public ArrayList<String> exerciseList(){
@@ -17,11 +19,11 @@ public class ExerciseManagement {
     }
     
     public void markAsCompleted(String exercise){
-   
+        this.completedExercises.add(exercise);
     }
     
     public boolean isCompleted(String exercise){
-        return true;
+        return this.completedExercises.contains(exercise);
     }
     
 }
