@@ -27,18 +27,27 @@ public class LiquidContainers {
                  int amount = Integer.valueOf(parts[1]);
                  
                  if(command.equals("add")){
+                     if(amount < 0){
+                            continue;
+                        } 
                      firstContainer += amount;
                      if(firstContainer > 100){
                      firstContainer = 100;
+                        
                 } else if (command.equals("move")){
                     firstContainer -= amount;
                     secondContainer += amount;
                     
                     if(firstContainer < amount){
                     firstContainer = 0;
+                    
                     } else if (secondContainer > 100){
                       secondContainer = 100;
+                      
                 } else if (command.equals("remove")){
+                    if(amount < 0){
+                            continue;
+                        }
                     secondContainer -= amount;
                     if(secondContainer < amount){
                     secondContainer = 0;
