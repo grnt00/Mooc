@@ -21,7 +21,7 @@ public class LiquidContainers {
             if (input.equals("quit")) {
                 break;
                 
-            } else if (!input.equals("quit")){
+            } else {
                  String[] parts = input.split(" ");
                  String command = parts[0];
                  int amount = Integer.valueOf(parts[1]);
@@ -33,18 +33,22 @@ public class LiquidContainers {
                      firstContainer += amount;
                      if(firstContainer > 100){
                      firstContainer = 100;
-                        
+                     }
                 } else if (command.equals("move")){
-                    firstContainer -= amount;
-                    secondContainer += amount;
-                    
                     if(firstContainer < amount){
-                    firstContainer = 0;
+                        secondContainer += firstContainer;
+                        firstContainer = 0;
+                        System.out.println("test");
+                    } else {
+                        firstContainer -= amount;
+                        secondContainer += amount;
+                    } 
                     
-                    } else if (secondContainer > 100){
+                    if (secondContainer > 100){
                       secondContainer = 100;
                       
                 } else if (command.equals("remove")){
+                        System.out.println("test");
                     if(amount < 0){
                             continue;
                         }
@@ -57,5 +61,6 @@ public class LiquidContainers {
           }  
         } 
       }
-    }     
-}
+    } 
+        
+
