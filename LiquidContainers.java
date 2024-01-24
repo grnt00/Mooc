@@ -38,7 +38,6 @@ public class LiquidContainers {
                     if(firstContainer < amount){
                         secondContainer += firstContainer;
                         firstContainer = 0;
-                        System.out.println("test");
                     } else {
                         firstContainer -= amount;
                         secondContainer += amount;
@@ -46,21 +45,22 @@ public class LiquidContainers {
                     
                     if (secondContainer > 100){
                       secondContainer = 100;
-                      
+                    }
                 } else if (command.equals("remove")){
-                        System.out.println("test");
                     if(amount < 0){
                             continue;
                         }
-                    secondContainer -= amount;
                     if(secondContainer < amount){
                     secondContainer = 0;
+                    }else{
+                    secondContainer -= amount;
+                   
                 }
               }       
             }
           }  
         } 
       }
-    } 
+     
         
 
