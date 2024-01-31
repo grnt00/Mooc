@@ -13,15 +13,18 @@ public class MainProgram {
         //System.out.println("Index of the smallest for: " + MainProgram.indexOfSmallestFrom(array2, 2));
         //System.out.println("");
         //System.out.println("Smallest arrayTest: " + MainProgram.smallest(arrayTest));
-        int[] numbers = {3, 2, 5, 4, 8};
+        //int[] numbers = {3, 2, 5, 4, 8};
 
-        System.out.println(Arrays.toString(numbers));
+        //System.out.println(Arrays.toString(numbers));
 
-        MainProgram.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
+        //MainProgram.swap(numbers, 1, 0);
+        //System.out.println(Arrays.toString(numbers));
 
-        MainProgram.swap(numbers, 0, 3);
-        System.out.println(Arrays.toString(numbers));
+        //MainProgram.swap(numbers, 0, 3);
+        //System.out.println(Arrays.toString(numbers));
+        
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        MainProgram.sort(numbers);
 
             
     }
@@ -79,21 +82,36 @@ public class MainProgram {
         int index2Value = array[index2];
         
         for(int i = 0; i < array.length; i++){
-            
             if(i == index1){
                 tempValue1 = array[i];
-                //System.out.println(tempValue1);
                 array[index1] = tempValue1;
             } else if (i == index2){
                 tempValue2 = array[i];
-                //System.out.println(tempValue2);
                 array[index2] = tempValue2;
             }
          }
             array[index1] = tempValue2;
-            array[index2] = tempValue1;
-        
+            array[index2] = tempValue1;   
         }
+    
+    public static void sort(int[] array){
+        int tempSmallest = 0;
+        int tempSmallestIndex = 0;
+        int tempCurrentIndex = 0;
+        //int[] tempArray = new int[array.length];
+        
+        for(int i = 0; i < array.length; i++){
+            System.out.println(Arrays.toString(array));
+            tempCurrentIndex = i;
+            tempSmallest = smallest(array);
+            tempSmallestIndex = indexOfSmallestFrom(array, i);
+            System.out.println(smallest(array));
+            System.out.println(indexOfSmallestFrom(array, i));
+            swap(array, tempCurrentIndex, tempSmallestIndex);
+            
+        }
+        
+    }
     
     }
         
