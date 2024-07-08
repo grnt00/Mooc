@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Searching {
@@ -44,6 +46,8 @@ public class Searching {
     }
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
+        // i < books.size() is correct because we wont reach the last value
+        //of .size(). This means that the last value for i will be the last index
         for(int i = 0; i < books.size(); i++){
             if(books.get(i).getId() == searchedId){
                 return i;
@@ -53,6 +57,23 @@ public class Searching {
     }
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
+        int begin = 0;
+        int end = books.size() -1;
+        //loop must be "<=" otherwise it wont iterate/run if end == 0
+        while(begin <= end){
+            int middle = (begin + end) / 2;
+ 
+            if(books.get(middle).getId() == searchedId){
+                return middle;
+            } else if (books.get(middle).getId() < searchedId){
+                begin = middle + 1;
+               
+            } else if (books.get(middle).getId() > searchedId){
+                end = middle - 1;
+            }
+            
+        }
+        
         return -1;
     }
 }
