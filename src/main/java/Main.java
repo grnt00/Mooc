@@ -8,6 +8,8 @@ public class Main {
         Person esko = new Person("Esko Ukkonen", "Mannerheimintie 15 00100 Helsinki");
         System.out.println(ada);
         System.out.println(esko);
+        
+        test
         */
         
         Student ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
