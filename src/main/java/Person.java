@@ -1,8 +1,8 @@
 
 public class Person {
     
-    protected String name;
-    protected String address;
+    private String name;
+    private String address;
     
     public Person(String name, String address){
         this.name = name;
@@ -12,6 +12,7 @@ public class Person {
     public String toString(){
         return name + "\n" + "  " + address;
     }
+    
     
     
 }

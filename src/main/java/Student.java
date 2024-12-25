@@ -1,7 +1,7 @@
 
 public class Student extends Person {
     
-    protected int creditsAmount;
+    private int creditsAmount;
     
     public Student(String name, String address){
         super(name, address);
@@ -14,6 +14,10 @@ public class Student extends Person {
     
     public int credits(){
         return creditsAmount;
+    }
+    
+    public String toString(){
+        return super.toString() + "\n" + "  Study credits " + credits();
     }
     
 }
