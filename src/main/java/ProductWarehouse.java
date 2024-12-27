@@ -15,6 +15,9 @@ public class ProductWarehouse extends Warehouse {
     public void setName(String productName) {
         this.productName = productName;
     }
-       
+    
+    public String toString(){
+        return this.productName + ": " + super.toString();
+    }
     
 }
