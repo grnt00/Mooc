@@ -20,4 +20,42 @@ public class ChangeHistory {
         return this.history.toString();
     }
     
+    public double maxValue(){
+        if(this.history.isEmpty()){
+            return 0;
+        }
+        double max = history.get(0);
+        for(Double value : history){
+            if(value > max){
+                max = value;
+            }
+        }
+        return max;
+    }
+    
+    public double minValue(){
+        if(this.history.isEmpty()){
+            return 0;
+        }
+        double min = history.get(0);
+        for(Double value : history){
+            if(value < min){
+                min = value;
+            }
+        }
+        return min;     
+    }
+    
+    public double average(){
+        if(this.history.isEmpty()){
+            return 0;
+        }
+        double sum = 0;
+        for(Double value : history){
+            sum += value;
+        }
+        return sum / this.history.size();
+        
+    }
+    
 }
