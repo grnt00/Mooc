@@ -30,7 +30,7 @@ public class ChangeHistory {
                 max = value;
             }
         }
-        return max;
+            return max;
     }
     
     public double minValue(){
@@ -43,7 +43,7 @@ public class ChangeHistory {
                 min = value;
             }
         }
-        return min;     
+            return min;     
     }
     
     public double average(){
@@ -54,7 +54,7 @@ public class ChangeHistory {
         for(Double value : history){
             sum += value;
         }
-        return sum / this.history.size();
+            return sum / this.history.size();
         
     }
     
