@@ -17,15 +17,16 @@ public class BoxWithMaxWeight extends Box {
                 
         if(item.getWeight() + balance > this.capacity){
             return;
-        }
+        } else {
             maxWeightBoxItemsList.add(item);
+        }
     }
     
     public boolean isInBox(Item item){
         for(Item itemInBox : maxWeightBoxItemsList){
             if(itemInBox.equals(item)){
                 return true;
-            }
+            } 
         }
             return false;
     }
